@@ -14,6 +14,6 @@ export class HotelRoomsPageComponent implements OnInit {
   }
 
   addReserve(reserve) {
-    this.hotelService.addReserve(reserve).subscribe();
+    this.hotelService.addReserve({...reserve, hotelRoom: {id:1} }).subscribe();
   }
 }

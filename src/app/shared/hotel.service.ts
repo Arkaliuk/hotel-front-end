@@ -40,14 +40,14 @@ export class HotelService {
   }
 
   getReserveHotelRoom(): Observable<HotelRoom> {
-    return this.http.get<HotelRoom>(this.urlReserve + '/3')
+    return this.http.get<HotelRoom>(this.urlReserve + '/1')
       .pipe(
         retry(1),
         catchError(this.handleError))
   }
 
   addReserve(reserve): Observable<Reserve> {
-    return this.http.post<Reserve>(this.apiURL, JSON.stringify(reserve), this.httpOptions)
+    return this.http.post<Reserve>(this.urlReserve, JSON.stringify(reserve), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError))

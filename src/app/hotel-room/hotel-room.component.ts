@@ -30,6 +30,7 @@ export class HotelRoomComponent implements OnInit {
       this.hotelRooms = data;
     })
   }
+  
   openModal(modal) {
     modal.style.display = "block";
   }
