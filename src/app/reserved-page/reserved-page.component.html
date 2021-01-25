@@ -1,1 +1,7 @@
-<p>reserved-page works!</p>
+<ul>
+    <li *ngFor="let room of reservedRooms">
+        <h2>Class room: {{room.hotelRoom.classRoom}}</h2>
+        <p>Type room: {{room.hotelRoom.typeRoom}}</p>
+        <p>Price: {{room.hotelRoom.price}}</p>
+    </li>
+</ul>
