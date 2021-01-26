@@ -29,7 +29,7 @@ export class HotelRoomsPageComponent implements OnInit {
       this.filterRooms = data;
     })
   }
-
+  
   selectRoomId(id) {
     this.selectedId = id;
   }
