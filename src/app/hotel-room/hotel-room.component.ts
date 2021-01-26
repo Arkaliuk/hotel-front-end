@@ -30,7 +30,7 @@ export class HotelRoomComponent implements OnInit {
       this.hotelRooms = data;
     })
   }
-  
+
   openModal(modal) {
     modal.style.display = "block";
   }
@@ -43,9 +43,9 @@ export class HotelRoomComponent implements OnInit {
   }
 
   getValueForm() {
-    let data = { typeRoom: this.newType, classRoom: this.newClass, hotelRoom: { id: 1 }, client: { id: 1 }, checkIn: this.newCheckIn, checkOut: this.newCheckOut }
-    this.newType = '';
-    this.newClass = '';
+    let data = { hotelRoom: { id: 1 }, client: { id: 1 }, checkIn: this.newCheckIn, checkOut: this.newCheckOut }
+    // this.newType = '';
+    // this.newClass = '';
     this.newCheckIn = '';
     this.newCheckOut = '';
     return data;

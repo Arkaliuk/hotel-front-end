@@ -1,1 +1,15 @@
+<div class="select">
+  <select name="todos" class="filter-todo">
+    <option value="SGL" class="targ">SGL</option>
+    <option value="DBL" class="targ">DBL</option>
+  </select>
+  <select>
+    <option value="LUX" class="targ">LUX</option>
+    <option value="STANDARD" class="targ">STANDARD</option>
+    <option value="ECONOMY" class="targ">ECONOMY</option>
+  </select>
+    <input type="text" placeholder="price">
+    <button (click)="filterHotelRoom()">Search</button>
+</div>
+
 <hotel-room (event)="addReserve($event)"></hotel-room>

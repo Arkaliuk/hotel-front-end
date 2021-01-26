@@ -22,7 +22,7 @@ export class HotelService {
   }
 
   apiURL = 'http://localhost:8080/hotel';
-  urlReserve='http://localhost:8080/reserve';
+  urlReserve = 'http://localhost:8080/reserve';
 
   getHotelRooms(): Observable<HotelRoom> {
     return this.http.get<HotelRoom>(this.apiURL + '/rooms')
@@ -33,7 +33,10 @@ export class HotelService {
   }
 
   getHotelRoomsByCondition(): Observable<HotelRoom> {
-    return this.http.get<HotelRoom>(this.apiURL + '/room')
+    return this.http.get<HotelRoom>(this.apiURL + '/room' + 
+    '?type=' + this.type + 
+    '&class=' + this.class + 
+    '&price=' + this.price)
       .pipe(
         retry(1),
         catchError(this.handleError))
