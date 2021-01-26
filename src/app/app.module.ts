@@ -9,6 +9,7 @@ import { ReservedPageComponent } from './reserved-page/reserved-page.component';
 import { RouterModule } from '@angular/router';
 import { HotelRoomComponent } from './hotel-room/hotel-room.component';
 import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,

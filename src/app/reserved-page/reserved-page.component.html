@@ -3,6 +3,6 @@
         <h2>Class room: {{room.hotelRoom.classRoom}}</h2>
         <p>Type room: {{room.hotelRoom.typeRoom}}</p>
         <p>Price: {{room.hotelRoom.price}}</p>
-        <p>Date of reservation: from: {{room.checkIn}} by: {{room.checkOut}}</p>
+        <p>Date of reservation: from: {{room.checkIn | date:'short'}} by: {{room.checkOut | date:'short'}}</p>
     </li>
 </ul>
