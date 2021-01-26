@@ -15,4 +15,4 @@
   <button (click)="reset(type, class, price)">Remove filter</button>
 </div>
 
-<hotel-room [hotelRooms]="filterRooms" (selectedRoom)="selectRoomId($event)" (event)="addReserve($event)"></hotel-room>
+<hotel-room [hotelRooms]="filterRooms" (event)="addReserve($event)"></hotel-room>

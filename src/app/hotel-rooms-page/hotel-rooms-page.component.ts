@@ -30,9 +30,7 @@ export class HotelRoomsPageComponent implements OnInit {
     })
   }
   
-  selectRoomId(id) {
-    this.selectedId = id;
-  }
+
 
   addReserve(reserve) {
     this.hotelService.addReserve(reserve).subscribe();
