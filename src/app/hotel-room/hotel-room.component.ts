@@ -41,12 +41,13 @@ export class HotelRoomComponent implements OnInit {
     modal.style.display = "none";
   }
 
-  onSubmit() {
+  onSubmit(modal) {
     this.event.emit(this.getValueForm());
+    this.closeModal(modal);
   }
 
   getValueForm() {
-    let data = {client: { id: 1 }, checkIn: this.newCheckIn, checkOut: this.newCheckOut, hotelRoom: {id : this.selectedRoom} }
+    let data = { client: { id: 1 }, checkIn: this.newCheckIn, checkOut: this.newCheckOut, hotelRoom: { id: this.selectedRoom } }
     this.newCheckIn = '';
     this.newCheckOut = '';
     return data;

@@ -7,12 +7,11 @@
 
     </li>
     <div #myModal class="modal">
-        <form (submit)="onSubmit()">
+        <form (submit)="onSubmit(myModal)">
             <input type="date" [(ngModel)]="newCheckIn" name="checkIn"  placeholder="Check In">
             <input type="date" [(ngModel)]="newCheckOut" name="checkOut"  placeholder="Check Out">
-
             <button type="submit"(click)="selectedRoomEvent.emit(selectedRoom)">Reserve</button>
-            <button (click)="closeModal(myModal)" class="close">Close</button>
+            <button type="button" (click)="closeModal(myModal)" class="close">Close</button>
         </form>
     </div>
 </ul>
