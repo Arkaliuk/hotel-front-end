@@ -3,17 +3,15 @@
         <h2>Class room: {{room.classRoom}}</h2>
         <p>Type room: {{room.typeRoom}}</p>
         <p>Price: {{room.price}}</p>
-        <button id="myBtn" (click)="openModal(myModal)">Reserve</button>
+        <button id="myBtn" (click)="openModal(myModal, room.id)">Reserve</button>
 
     </li>
     <div #myModal class="modal">
         <form (submit)="onSubmit()">
-            <!-- <input type="text" [(ngModel)]="newType" name="type"  placeholder="Type room">
-            <input type="text" [(ngModel)]="newClass" name="class" placeholder="Class room"> -->
             <input type="date" [(ngModel)]="newCheckIn" name="checkIn"  placeholder="Check In">
             <input type="date" [(ngModel)]="newCheckOut" name="checkOut"  placeholder="Check Out">
 
-            <button type="submit">Reserve</button>
+            <button type="submit"(click)="selectedRoomEvent.emit(selectedRoom)">Reserve</button>
             <button (click)="closeModal(myModal)" class="close">Close</button>
         </form>
     </div>

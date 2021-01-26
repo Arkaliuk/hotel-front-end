@@ -9,14 +9,10 @@ import { HotelService } from '../shared/hotel.service';
 export class HotelRoomsPageComponent implements OnInit {
 
   @Output() filterRooms: any;
-
+  selectedId: number;
   constructor(public hotelService: HotelService) { }
 
   ngOnInit(): void {
-  }
-
-  addReserve(reserve) {
-    this.hotelService.addReserve({ ...reserve, hotelRoom: { id: 1 } }).subscribe();
   }
 
   filterHotelRoom(type: any, classRoom: any, price: any) {
@@ -32,5 +28,13 @@ export class HotelRoomsPageComponent implements OnInit {
     this.hotelService.getHotelRooms().subscribe((data: {}) => {
       this.filterRooms = data;
     })
+  }
+
+  selectRoomId(id) {
+    this.selectedId = id;
+  }
+
+  addReserve(reserve) {
+    this.hotelService.addReserve(reserve).subscribe();
   }
 }

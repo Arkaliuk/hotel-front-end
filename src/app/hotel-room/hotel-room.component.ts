@@ -17,8 +17,9 @@ export class HotelRoomComponent implements OnInit {
     this.getRooms();
   }
 
-
   @Output() event = new EventEmitter();
+  @Output() selectedRoomEvent = new EventEmitter();
+  selectedRoom: number;
   newType: any;
   newClass: any;
   newCheckIn: any;
@@ -31,9 +32,11 @@ export class HotelRoomComponent implements OnInit {
     })
   }
 
-  openModal(modal) {
+  openModal(modal, id) {
     modal.style.display = "block";
+    this.selectedRoom = id;
   }
+
   closeModal(modal) {
     modal.style.display = "none";
   }
@@ -43,9 +46,7 @@ export class HotelRoomComponent implements OnInit {
   }
 
   getValueForm() {
-    let data = { hotelRoom: { id: 1 }, client: { id: 1 }, checkIn: this.newCheckIn, checkOut: this.newCheckOut }
-    // this.newType = '';
-    // this.newClass = '';
+    let data = {client: { id: 1 }, checkIn: this.newCheckIn, checkOut: this.newCheckOut, hotelRoom: {id : this.selectedRoom} }
     this.newCheckIn = '';
     this.newCheckOut = '';
     return data;
