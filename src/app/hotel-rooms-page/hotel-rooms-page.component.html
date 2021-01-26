@@ -1,15 +1,18 @@
 <div class="select">
-  <select name="todos" class="filter-todo">
-    <option value="SGL" class="targ">SGL</option>
-    <option value="DBL" class="targ">DBL</option>
-  </select>
-  <select>
+  <select #type name="type">
+    <option value="None" class="targ">None</option>
     <option value="LUX" class="targ">LUX</option>
     <option value="STANDARD" class="targ">STANDARD</option>
     <option value="ECONOMY" class="targ">ECONOMY</option>
   </select>
-    <input type="text" placeholder="price">
-    <button (click)="filterHotelRoom()">Search</button>
+  <select #class name="class">
+    <option value="None" class="targ">None</option>
+    <option value="SGL" class="targ">SGL</option>
+    <option value="DBL" class="targ">DBL</option>
+  </select>
+  <input #price type="number" placeholder="price">
+  <button (click)="filterHotelRoom(type.value, class.value, price.value)">Search</button>
+  <button (click)="reset(type, class, price)">Remove filter</button>
 </div>
 
-<hotel-room (event)="addReserve($event)"></hotel-room>
+<hotel-room [hotelRooms]="filterRooms" (event)="addReserve($event)"></hotel-room>

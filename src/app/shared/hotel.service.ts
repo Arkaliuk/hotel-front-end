@@ -32,11 +32,11 @@ export class HotelService {
       )
   }
 
-  getHotelRoomsByCondition(): Observable<HotelRoom> {
+  getHotelRoomsByCondition(type:any, classRoom:any, price:any): Observable<HotelRoom> {
     return this.http.get<HotelRoom>(this.apiURL + '/room' + 
-    '?type=' + this.type + 
-    '&class=' + this.class + 
-    '&price=' + this.price)
+    '?type=' + type + 
+    '&class=' + classRoom + 
+    '&price=' + price)
       .pipe(
         retry(1),
         catchError(this.handleError))
